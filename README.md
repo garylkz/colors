@@ -7,7 +7,7 @@ Python script to generate 1x1 hex color PNG image.
 **Example**
 
     import color
-    color.png(333333)
+    color.png(0x333333)
 
 ## [PNG file structure](https://www.w3.org/TR/PNG-Structure.html)
 
