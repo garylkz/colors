@@ -2,7 +2,7 @@
 
 ## [color.py](color.py)
 
-Python script to generate 1x1 image of color hex.
+Python script to generate 1x1 hex color PNG image.
 
 **Example**
 
@@ -26,7 +26,7 @@ Python script to generate 1x1 image of color hex.
 ### IHDR
 
     00  00  00  0D  0C  0D  0E  0F
-    IHDR
+    \x00\x00\x00\rIHDR
 
 - Width (4 bytes)
 - Height (4 bytes)
@@ -49,10 +49,10 @@ Python script to generate 1x1 image of color hex.
 
 ### IDAT
 
-    49  44  41  54
-    IDAT
+    ??  ??  ??  ??  49  44  41  54
+    \x??\x??\x??\x??IDAT
 
 ### IEND
 
     00  00  00  00  49  45  4E  44
-    IEND
+    \x00\x00\x00\x00IEND
