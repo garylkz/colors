@@ -1,5 +1,5 @@
 const hex = document.getElementById("hex");
 
-function alertInput() {
+function alertHex() {
     alert(hex);
 }
