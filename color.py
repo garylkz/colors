@@ -12,7 +12,7 @@ IHDR = b'IHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00'
 IEND = b'\x00\x00\x00\x00IEND'
 
 
-def png(h: int, *, name: str = None) -> None:
+def png(h: int, name: str = None) -> None:
     idat = b'IDAT' + zlib.compress(b4(h))
     data = SIG + chunk(IHDR) + chunk(idat) + IEND
     basename = '#' + hex(h)[2:]
