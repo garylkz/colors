@@ -7,7 +7,7 @@ Python script to generate 1x1 image of color hex.
 **Example**
 
     import color
-    color.png(0x333333)
+    color.png(333333)
 
 ## [PNG file structure](https://www.w3.org/TR/PNG-Structure.html)
 
@@ -20,11 +20,13 @@ Python script to generate 1x1 image of color hex.
 
 ### PNG signature
 
-    89  50  4e  47  0d  0a  1a  0a
+    89  50  4e  47  0d  0a  1a  0a  # 8 bytes
+    \x89PNG\r\n\x1a\n               # hex string
 
 ### IHDR
 
     00  00  00  0D  0C  0D  0E  0F
+    IHDR
 
 - Width (4 bytes)
 - Height (4 bytes)
@@ -48,7 +50,9 @@ Python script to generate 1x1 image of color hex.
 ### IDAT
 
     49  44  41  54
+    IDAT
 
 ### IEND
 
     00  00  00  00  49  45  4E  44
+    IEND
