@@ -12,6 +12,10 @@ IHDR = b'IHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x02\x00\x00\x00'
 IEND = b'\x00\x00\x00\x00IEND'
 
 
-def png(hex: int, *, out: str = 'out') -> None:
-    idat = b'IDAT' + zlib.compress(b4(hex))
-    open(f'{out}.png', 'wb').write(SIG + chunk(IHDR) + chunk(idat) + IEND)
+def png(h: int, *, name: str = None) -> None:
+    idat = b'IDAT' + zlib.compress(b4(h))
+    data = SIG + chunk(IHDR) + chunk(idat) + IEND
+    basename = '#' + hex(h)[2:]
+    if name:
+        basename += f' - {name}'
+    open(f'{basename}.png', 'wb').write(data)
