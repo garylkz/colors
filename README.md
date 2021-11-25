@@ -2,7 +2,7 @@
 
 ## [color.py](color.py)
 
-Python script to generate 1x1 image of color hex.
+Python script to generate 1x1 hex color PNG image.
 
 **Example**
 
@@ -50,7 +50,7 @@ Python script to generate 1x1 image of color hex.
 ### IDAT
 
     ??  ??  ??  ??  49  44  41  54
-    /x??/x??/x??/x??IDAT
+    \x??\x??\x??\x??IDAT
 
 ### IEND
 
