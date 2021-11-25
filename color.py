@@ -13,9 +13,7 @@ IEND = b'\x00\x00\x00\x00IEND'
 
 
 def png(h: int, name: str = None) -> None:
+    out = name if name else format(h, 'x') + '.png'
     idat = b'IDAT' + zlib.compress(b4(h))
     data = SIG + chunk(IHDR) + chunk(idat) + IEND
-    basename = '#' + hex(h)[2:]
-    if name:
-        basename += f' - {name}'
-    open(f'{basename}.png', 'wb').write(data)
+    open(out, 'wb').write(data)
