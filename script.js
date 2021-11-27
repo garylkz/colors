@@ -10,6 +10,6 @@ function fill() {
 
 function download() {
     d.href = c.toDataURL();
-    d.download = h.value + '.png';
+    d.download = h.value.toLowerCase() + '.png';
     d.click();
 }
