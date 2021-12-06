@@ -1,8 +1,13 @@
 # Colors
 
+## [color.html](color.html)
+
+A hex color picker website. 
+Wait, am I supposed to further explain it? 
+
 ## [color.py](color.py)
 
-Python script to generate 1x1 hex color PNG image.
+Python script to generate 1x1 hex color PNG image. 
 
 **Example**
 
