@@ -1,0 +1,14 @@
+body, input {
+    font-size: 3vw;
+    font-family: monospace;
+}
+
+div, input {
+    border: medium solid;
+}
+
+div {
+    display: inline-block;
+    padding: 0.3ch;
+    padding-left: 3ch;
+}
