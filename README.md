@@ -1,37 +1,50 @@
 # Colors
 
+A hex color generator _\__.
+
 ## [color.html](color.html)
 
-A hex color picker website. 
+~ website. 
 Wait, am I supposed to further explain it? 
+Anyway, [here](color.html).
 
 ## [color.py](color.py)
 
-Python script to generate 1x1 hex color PNG image. 
+~ script. 
+But seriously, why did I made this?
+[To learn more](https://www.w3.org/TR/PNG-Structure.html).
 
-**Example**
+**Usage**
 
-    import color
-    color.png(0x333333)
+```py
+import color
+color.png(0x333333)
+```
 
-## [PNG file structure](https://www.w3.org/TR/PNG-Structure.html)
+## To learn more (abridged)
 
-- PNG signature (8 bytes)
-- IHDR (8 + 13 bytes)
-- IDAT (4 + 4 + < 2gb)
-- IEND (8 bytes)
+A simple `.png` file structure
 
-> 4 (Chunk size, chunk type excluded) + 4 (Chunk type) + x (Chunk data)
+1. PNG signature (8 bytes)
+2. IHDR (4 + 4 + 13 bytes)
+3. IDAT (4 + 4 + x : x < 2gb)
+4. IEND (4 + 4 bytes)
+
+> 4 (chunk size) + 4 (chunk type) + ...  
 
 ### PNG signature
 
-    89  50  4e  47  0d  0a  1a  0a  # 8 bytes
-    \x89PNG\r\n\x1a\n               # hex string
+ ```
+ 89  50  4e  47  0d  0a  1a  0a  # 8 bytes
+\x89PNG\r\n\x1a\n               # hex string
+```
 
 ### IHDR
 
-    00  00  00  0D  0C  0D  0E  0F
-    \x00\x00\x00\rIHDR
+```
+00  00  00  0D  0C  0D  0E  0F
+\x00\x00\x00\rIHDR
+```
 
 - Width (4 bytes)
 - Height (4 bytes)
@@ -54,10 +67,17 @@ Python script to generate 1x1 hex color PNG image.
 
 ### IDAT
 
-    ??  ??  ??  ??  49  44  41  54
-    \x??\x??\x??\x??IDAT
+```
+XX  XX  XX  XX  49  44  41  54
+XXXXIDAT
+```
+
+- **zlib compression** is *required* for this section's data bytes
+- **CRC check** is *needed* for this chunk 
 
 ### IEND
 
-    00  00  00  00  49  45  4E  44
-    \x00\x00\x00\x00IEND
+```
+00  00  00  00  49  45  4E  44
+\x00\x00\x00\x00IEND
+```
