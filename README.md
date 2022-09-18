@@ -1,16 +1,14 @@
-# Colors
-
-A hex color generator _\__.
+A hex color generator...
 
 ## [color.html](color.html)
 
-~ website. 
+...website. 
 Wait, am I supposed to further explain it? 
 Anyway, [here](color.html).
 
 ## [color.py](color.py)
 
-~ script. 
+...script. 
 But seriously, why did I made this?
 [To learn more](https://www.w3.org/TR/PNG-Structure.html).
 
