@@ -1,3 +1,5 @@
+# colors
+
 A hex color generator...
 
 ## [color.html](color.html)
